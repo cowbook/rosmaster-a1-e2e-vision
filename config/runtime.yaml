@@ -1,0 +1,23 @@
+rosmaster_a1_e2e_vision:
+  ros__parameters:
+    rgb_topic: /nuwa/rgb/image_raw
+    start_stop_topic: /e2e/start_stop
+    safety_stop_topic: /e2e/safety_stop
+
+    control_adapter: ackermann_drive_stamped
+    control_topic: /ackermann_cmd
+
+    model_backend: torch
+    model_path: /tmp/model_best.pt
+    model_device: cpu
+
+    image_width: 200
+    image_height: 66
+    crop_top_pixels: 0
+
+    fixed_speed_mps: 0.12
+    visual_stop_threshold: 0.70
+
+    max_steering_abs: 0.45
+    steering_low_pass_alpha: 0.35
+    steering_rate_limit_per_sec: 0.75
